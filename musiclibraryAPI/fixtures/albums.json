@@ -1,0 +1,26 @@
+[
+  {
+      "model": "musiclibraryAPI.album",
+      "pk": 1,
+      "fields": {
+          "album_title": "Best of Boxcar Willie",
+          "year_created": "2010"
+      }
+  },
+  {
+      "model": "musiclibraryAPI.album",
+      "pk": 2,
+      "fields": {
+          "album_title": "Music of the Mole People",
+          "year_created": "2010"
+      }
+  },
+  {
+      "model": "musiclibraryAPI.album",
+      "pk": 3,
+      "fields": {
+          "album_title": "Live in Iowa City",
+          "year_created": "2010"
+      }
+  }
+]
