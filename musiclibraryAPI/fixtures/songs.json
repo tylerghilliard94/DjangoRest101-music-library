@@ -1,52 +1,12 @@
 [
-  {
-      "model": "musiclibraryAPI.song",
-      "pk": 1,
-      "fields": {
-          "song_title": "Hitchin' a Ride",
-          "artist": "Boxcar Willie",
-          "album_id": 1,
-          "user_id": 1
-      }
-  },
-  {
-      "model": "musiclibraryAPI.song",
-      "pk": 2,
-      "fields": {
-          "song_title": "Digging in the Dirt",
-          "artist": "The Naked Mole Rats",
-          "album_id": 2,
-          "user_id": 1
-      }
-  },
-  {
-      "model": "musiclibraryAPI.song",
-      "pk": 3,
-      "fields": {
-          "song_title": "Yeah, Alright, Baby",
-          "artist": "The Intellectuals",
-          "album_id": 3,
-          "user_id": 1
-      }
-  },
-  {
-      "model": "musiclibraryAPI.song",
-      "pk": 4,
-      "fields": {
-          "song_title": "Coal Shuttle Blues",
-          "artist": "Boxcar Willie",
-          "album_id": 1,
-          "user_id": 1
-      }
-  },
-  {
-      "model": "musiclibraryAPI.song",
-      "pk": 5,
-      "fields": {
-          "song_title": "Groovy Grubs",
-          "artist": "Manny and the Moles",
-          "album_id": 2,
-          "user_id": 1
-      }
-  }
+    {
+        "model": "musiclibraryAPI.song",
+        "pk": 1,
+        "fields": {
+            "song_title": "ScatMan's World",
+            "artist": "Scatman",
+            "album": 1,
+            "user": 1
+        }
+    }
 ]

@@ -1,0 +1,10 @@
+[
+    {
+        "model": "musiclibraryAPI.playlist",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "title": "My Playlist"
+        }
+    }
+]
