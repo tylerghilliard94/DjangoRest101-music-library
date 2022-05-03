@@ -20,8 +20,7 @@ from rest_framework import routers
 from musiclibraryAPI.views import AlbumView, SongView
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'albums', AlbumView, 'album')
-router.register(r'songs', SongView, 'song')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

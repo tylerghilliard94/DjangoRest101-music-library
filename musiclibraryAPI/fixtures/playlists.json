@@ -1,0 +1,10 @@
+[
+    {
+        "model": "musiclibraryAPI.playlist",
+        "pk": 1,
+        "fields": {
+            "user_id": 1,
+            "title": "Epic Love Songs"
+        }
+    }
+]

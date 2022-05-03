@@ -16,9 +16,6 @@ class SongView(ViewSet):
         Returns:
             Response -- JSON serialized song
         """
-        song = Song.objects.get(pk=pk) # This is a replacement for an entire SQL query. Crazy!
-        serializer = SongSerializer(song)
-        return Response(serializer.data)
 
     def list(self, request):
         """Handle GET requests to get all songs
@@ -26,22 +23,11 @@ class SongView(ViewSet):
         Returns:
             Response -- JSON serialized list of songs
         """
-        songs = Song.objects.all()
-        serializer = SongSerializer(songs, many=True)
-        return Response(serializer.data)
+
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     id = serializers.CharField(source='pk', read_only=True)
+
     class Meta:
         model = User
         fields = ('id', 'username', 'first_name', 'last_name')
-
-class SongSerializer(serializers.ModelSerializer):
-    """JSON serializer for songs
-    """
-    user = UserSerializer()
-
-    class Meta:
-        model = Song
-        fields = ('id', 'song_title', 'artist', 'album', 'user')
-        depth = 1
