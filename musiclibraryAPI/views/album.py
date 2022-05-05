@@ -16,9 +16,28 @@ class AlbumView(ViewSet):
             Response -- JSON serialized album
         """
 
+        album = Album.objects.get(pk=pk)
+
+        serializer = AlbumSerializer(album)
+        return Response(serializer.data)
+
     def list(self, request):
         """Handle GET requests to get all albums
 
         Returns:
             Response -- JSON serialized list of albums
         """
+
+        albums = Album.objects.all()
+
+        serializer = AlbumSerializer(
+            albums, many=True
+        )
+        return Response(serializer.data)
+
+
+class AlbumSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Album
+        fields = ('id', 'album_title', 'year_created')

@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from django.contrib.auth.models import User
 from musiclibraryAPI.models import Song
+from musiclibraryAPI.models.album import Album
 
 
 class SongView(ViewSet):
@@ -17,12 +18,23 @@ class SongView(ViewSet):
             Response -- JSON serialized song
         """
 
+        song = Song.objects.get(pk=pk)
+
+        serializer = SongSerializer(song)
+        return Response(serializer.data)
+
     def list(self, request):
         """Handle GET requests to get all songs
 
         Returns:
             Response -- JSON serialized list of songs
         """
+
+        songs = Song.objects.all()
+
+        serializer = SongSerializer(songs, many=True)
+
+        return Response(serializer.data)
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -31,3 +43,21 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'first_name', 'last_name')
+
+
+class AlbumSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Album
+        fields = ('id', 'album_title')
+
+
+class SongSerializer(serializers.ModelSerializer):
+
+    user = UserSerializer()
+    album = AlbumSerializer()
+
+    class Meta:
+        model = Song
+        fields = ('id', 'song_title', 'artist', 'album', 'user')
+        depth = 1

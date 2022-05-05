@@ -6,5 +6,13 @@
             "album_title": "Best of Whitney Houston",
             "year_created": "1992"
         }
+    },
+    {
+        "model": "musiclibraryAPI.album",
+        "pk": 2,
+        "fields": {
+            "album_title": "Greatest Hits of The 90s",
+            "year_created": "1998"
+        }
     }
 ]
