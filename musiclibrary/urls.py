@@ -19,12 +19,14 @@ from django.conf.urls import include
 from rest_framework import routers
 
 from musiclibraryAPI.views.album import AlbumView
+from musiclibraryAPI.views.playlist import PlaylistView
 from musiclibraryAPI.views.song import SongView
 
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'albums', AlbumView, "album")
 router.register(r'songs', SongView, 'song')
+router.register(r'playlists', PlaylistView, 'playlist')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -45,4 +45,4 @@ class AlbumSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Album
-        fields = ('album_title',)
+        fields = ('album_title', 'year_created')
