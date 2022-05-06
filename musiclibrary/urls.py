@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from musiclibraryAPI.views import AlbumView, SongView
+
+from musiclibraryAPI.views.album import AlbumView
+from musiclibraryAPI.views.song import SongView
+
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'albums', AlbumView, 'album')
+router.register(r'albums', AlbumView, "album")
 router.register(r'songs', SongView, 'song')
 
 urlpatterns = [
