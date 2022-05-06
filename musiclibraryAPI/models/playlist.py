@@ -6,5 +6,3 @@ class Playlist(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
-    albums = models.ManyToManyField(
-        'Album', through='playlistAlbum', related_name='playlists')
